@@ -20,7 +20,7 @@ const menu = [
 
 const Navbar = () => {
   return (
-    <header className="sticky top-0 left-0 right-0 py-4">
+    <header className="absolute top-0 left-0 right-0 py-4 z-10">
       <ContainerWrapper>
         <div className="flex items-center justify-between">
           <Logo />

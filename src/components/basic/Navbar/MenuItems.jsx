@@ -10,6 +10,7 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import { AlignJustify } from "lucide-react";
+import Logo from "./Logo";
 
 
 const MenuItems = ({menu}) => {
@@ -20,13 +21,13 @@ const MenuItems = ({menu}) => {
             <Image src="/images/icons/action-button.svg" alt="menu" height={50} width={30}/>
             {/* <AlignJustify/> */}
         </SheetTrigger>
-        <SheetContent className="bg-white">
+        <SheetContent className="bg-black text-white">
           <SheetHeader>
-            <SheetTitle>Are you absolutely sure?</SheetTitle>
+            <SheetTitle><Logo/></SheetTitle>
             <SheetDescription>
               <div className="flex flex-col items-start gap-4">
                 {menu?.map((item, index) => (
-                  <Link href={item?.url} key={index}>{item?.name}</Link>
+                  <Link href={item?.url} key={index} className="uppercase font-semibold">{item?.name}</Link>
                 ))}
               </div>
             </SheetDescription>
