@@ -13,7 +13,7 @@ body{
   background: #dfdddd;
 }
 
-.yello-btn{
+.yellow-btn{
   background-color: var(--yellow);
   padding: 10px 15px;
   color: var(--purple);
@@ -23,8 +23,22 @@ body{
   font-weight: 600;
 }
 
-.yello-btn:hover{
+.yellow-btn:hover{
   background-color: var(--yellow) !important;
+}
+
+.blue-btn{
+  background-color: var(--purple);
+  padding: 10px 15px;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.blue-btn:hover{
+  background-color: var(--purple) !important;
 }
 
 .glass-effect{

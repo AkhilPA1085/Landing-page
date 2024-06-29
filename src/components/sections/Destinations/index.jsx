@@ -51,7 +51,7 @@ const Destinations = () => {
         ))}
       </div>
       <div className="text-center pt-12">
-        <Button className="yello-btn">View All</Button>
+        <Button className="yellow-btn">View All</Button>
       </div>
     </Section>
   );

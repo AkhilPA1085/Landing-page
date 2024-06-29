@@ -1,3 +1,4 @@
+'use client'
 import * as React from "react";
 
 import {
@@ -10,7 +11,32 @@ import {
 import Image from "next/image";
 import { Button } from "../ui/button";
 
-export function ImageCard({ image, title, className }) {
+export function ImageCard({ image, title, className, widthChange,index }) {
+  const [hoveredIndex, setHoveredIndex] = React.useState(null);
+
+  if (widthChange) {
+    return (
+      <Card
+        className={`relative overflow-hidden transition-all duration-300 rounded-md border-none ${
+          hoveredIndex === index ? "scale-105" : ""
+        }`}
+        onMouseEnter={() => setHoveredIndex(index)}
+        onMouseLeave={() => setHoveredIndex(null)}
+      >
+        <CardContent className="p-0">
+          <Image
+            src={image}
+            alt={`Package ${index + 1}`}
+            height={100}
+            width={100}
+            className={`transition-transform duration-300 ${
+              hoveredIndex === index ? "scale-105" : "scale-100"
+            }`}
+          />
+        </CardContent>
+      </Card>
+    );
+  }
   return (
     <Card className={`rounded-2xl relative p-0 group ${className}`}>
       <CardContent className="p-0">
