@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/card";
 import Image from "next/image";
 import { Button } from "../ui/button";
+import CustomButton from "./CustomButton";
 
 export function ImageCard({ image, title, className, widthChange,index }) {
   const [hoveredIndex, setHoveredIndex] = React.useState(null);
@@ -23,7 +24,7 @@ export function ImageCard({ image, title, className, widthChange,index }) {
         onMouseEnter={() => setHoveredIndex(index)}
         onMouseLeave={() => setHoveredIndex(null)}
       >
-        <CardContent className="p-0">
+        <CardContent className="p-0 w-full h-full">
           <Image
             src={image}
             alt={`Package ${index + 1}`}
@@ -38,11 +39,11 @@ export function ImageCard({ image, title, className, widthChange,index }) {
     );
   }
   return (
-    <Card className={`rounded-2xl relative p-0 group ${className}`}>
-      <CardContent className="p-0">
+    <Card className={`rounded-xl relative p-0 group ${className}`}>
+      <CardContent className="p-0 w-full h-full">
         <Image
           src={image}
-          className="w-full h-full"
+          className="w-full h-full object-cover rounded-xl"
           width={1080}
           height={1080}
         />
@@ -50,10 +51,10 @@ export function ImageCard({ image, title, className, widthChange,index }) {
       <CardHeader className="absolute inset-0">
         <CardTitle className="text-white text-xl capitalize">{title}</CardTitle>
       </CardHeader>
-      <CardFooter className="absolute bottom-0 w-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        <Button className="bg-white py-2 px-4 rounded-2xl uppercase text-black font-bold hover:bg-white">
+      <CardFooter className="absolute bottom-0 w-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+        <CustomButton className="bg-white hover:bg-white">
           view package
-        </Button>
+        </CustomButton>
       </CardFooter>
     </Card>
   );

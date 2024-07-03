@@ -22,7 +22,7 @@ import { CustomInput } from "./CustomInput";
 
 const ContactForm = () => {
   return (
-    <Card className="w-[350px] bg-white text-black rounded-xl">
+    <Card className="w-full md:w-[350px] bg-white text-black rounded-xl">
       <CardHeader className="text-center">
         <CardTitle className="text-darkBgBlue">Contact us</CardTitle>
         <CardDescription>Your Next Adventure Begins Here!</CardDescription>

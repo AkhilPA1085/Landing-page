@@ -3,6 +3,7 @@ import Section from "../../basic/Section";
 import SectionTitle from "@/components/basic/SectionTitle";
 import { ImageCard } from "@/components/basic/ImageCard";
 import { Button } from "@/components/ui/button";
+import CustomButton from "@/components/basic/CustomButton";
 
 const destinations = [
   {
@@ -33,25 +34,25 @@ const destinations = [
 
 const Destinations = () => {
   return (
-    <Section>
+    <Section className="pt-0">
       <SectionTitle
         title="Choose destinations"
         subTitle="Explore Diverse Destinations, Uncover Captivating Descriptions"
       />
-      <div className="grid md:grid-cols-4 gap-4 pt-8">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-8">
         {destinations.map(({ image, title }, index) => (
           <ImageCard
             key={index}
             className={`${
-              index === 2 ? "md:col-span-2 md:w-full md:h-full" : ""
-            } ${index === 1 ? "md:row-span-2 md:w-full" : ""}`}
+              index === 2 ? "md:col-span-2 w-full h-full" : "w-full h-full"
+            } ${index === 1 ? "aspect-square md:aspect-auto row-auto md:row-span-2 w-full h-full" : ""}`}
             title={title}
             image={image}
           />
         ))}
       </div>
       <div className="text-center pt-12">
-        <Button className="yellow-btn">View All</Button>
+        <CustomButton>View All</CustomButton>
       </div>
     </Section>
   );

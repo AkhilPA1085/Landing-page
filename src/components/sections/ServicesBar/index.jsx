@@ -27,13 +27,26 @@ const services = [
 
 const ServicesBar = () => {
   return (
-    <Section className="p-8 bg-lightBgPink">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <Section className="py-8 bg-lightBgPink">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
         {services.map((service, index) => (
-          <div className="item flex flex-col items-start text-start" key={index}>
-            <Image src={service.icon} alt="icon" height={65} width={65} />
-            <h6 className="text-2xl font-medium mt-4 mb-2">{service.title}</h6>
-            <p>{service.description}</p>
+          <div
+            className="item flex flex-col items-start text-start p-4"
+            key={index}
+          >
+            <Image
+              src={service.icon}
+              alt="icon"
+              height={1080}
+              width={1080}
+              className="h-16 w-16 sm:h-20 sm:w-20 lg:w-28 object-contain"
+            />
+            <h6 className="text-xl sm:text-2xl font-medium mt-4 mb-2">
+              {service.title}
+            </h6>
+            <p className="text-sm sm:text-base">
+              {service.description}
+            </p>
           </div>
         ))}
       </div>

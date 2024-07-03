@@ -23,7 +23,7 @@ const ContactUs = () => {
       <div className="contact-form-wrapper rounded-xl md:p-8 md:bg-darkBgBlue text-white text-start">
         <div className="grid grid-cols-1 md:grid-cols-2 place-items-center gap-6">
           <div className="grid-item">
-            <div className="title text-6xl text-white font-semibold">
+            <div className="title md:text-6xl text-white font-semibold">
               We are just one Message Away!
             </div>
             <div className="text-xl opacity-65 mt-2 mb-6 text-white">

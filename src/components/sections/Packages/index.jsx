@@ -29,7 +29,7 @@ const Packages = () => {
         title={"Top packages"}
         subTitle={"Explore Diverse Destinations, Uncover Captivating Descriptions"}
       />
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 items-center gap-4 pt-8">
+      <div className="grid grid-cols-2 lg:grid-cols-4 items-center gap-4 pt-8">
         {packages?.map((item,index)=>(
           <ImageCard key={index} title={item?.title} image={item?.image}/>
         ))}

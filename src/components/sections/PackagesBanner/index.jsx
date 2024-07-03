@@ -45,7 +45,7 @@ const PackagesBanner = () => {
             }}
           >
             <div className="text-content pt-20 z-10">
-              <div className="title text-6xl text-white font-semibold">
+              <div className="title md:text-6xl text-white font-semibold">
                 Traveler’s Choice Best of the Best
               </div>
               <div className="text-xl opacity-65 mt-2 mb-6 text-white">

@@ -4,6 +4,7 @@ import { Button } from "../../ui/button";
 import SideBar from "../../basic/SideBar";
 import ContainerWrapper from "../../basic/ContainerWrapper";
 import { useScroll, useTransform, motion } from "framer-motion";
+import CustomButton from "@/components/basic/CustomButton";
 
 const HomeBanner = () => {
   const ref = useRef(null);
@@ -26,42 +27,42 @@ const HomeBanner = () => {
   return (
     <div
       ref={ref}
-      className="h-screen w-full overflow-hidden relative flex flex-col items-center justify-center"
+      className="md:h-screen w-full overflow-hidden relative flex flex-col items-center justify-center py-28"
     >
       <ContainerWrapper>
-        <motion.div
-          className="grid md:grid-cols-2 items-center h-full z-10 relative place-items-center"
+        <div
+          className="grid md:grid-cols-2 items-center h-full z-10 relative place-items-center justify-center"
           style={{ y: textY }}
         >
           {/* Left Content */}
-          <div className="flex flex-col justify-between h-full p-8 md:py-16">
+          <div className="flex flex-col justify-between h-full md:py-16 p-8">
             <div className="text-white">
               <h1 className="text-3xl md:text-6xl font-semibold">
                 Discover New Destinations
               </h1>
-              <p className="text-lg md:text-xl pb-6">
+              <p className="text-base md:text-xl pb-6">
                 Embark on Unforgettable Journeys: Where Every Destination Tells
                 a Unique Story.
               </p>
-              <Button className="yellow-btn">Discover Now</Button>
+              <CustomButton>Discover Now</CustomButton>
             </div>
             {/* Glass Effect Section */}
-            <div className="glass-effect flex flex-col md:flex-row items-center justify-center gap-4 mt-10 p-4">
-              <div className="border-r pr-4">
+            <div className="glass-effect flex items-center justify-center gap-4 mt-10 p-4">
+              <div className="border-r pr-4 text-base">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste,
                 facilis!
               </div>
-              <div>
+              <div className="text-base">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste,
                 facilis!
               </div>
             </div>
           </div>
           {/* Right Sidebar */}
-          <div className="hidden md:flex md:justify-end">
+          <div className="hidden md:flex md:justify-end w-full">
             <SideBar />
           </div>
-        </motion.div>
+        </div>
       </ContainerWrapper>
       <div
         className="absolute inset-0 z-0"
@@ -71,16 +72,16 @@ const HomeBanner = () => {
           backgroundPosition: "center",
         }}
       ></div>
-      <motion.div
+      <div
         className="absolute -left-3 right-0 top-0 bottom-0 z-5"
         style={{
           backgroundImage: "url(/images/banner/big-cloud.png)",
           backgroundSize: "cover",
-          backgroundPosition: "center",
+          backgroundPosition: "bottom",
           y: backgroundY,
         }}
         animate={cloudMovement}
-      ></motion.div>
+      ></div>
     </div>
   );
 };
