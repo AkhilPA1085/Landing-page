@@ -18,9 +18,7 @@ export function ImageCard({ image, title, className, widthChange,index }) {
   if (widthChange) {
     return (
       <Card
-        className={`relative overflow-hidden transition-all duration-300 rounded-md border-none ${
-          hoveredIndex === index ? "scale-105" : ""
-        }`}
+        className={`w-8 h-48 sm:w-24 sm:h-96 bg-transparent border-none rounded-xl hover:w-full transition-all duration-300`}
         onMouseEnter={() => setHoveredIndex(index)}
         onMouseLeave={() => setHoveredIndex(null)}
       >
@@ -28,11 +26,9 @@ export function ImageCard({ image, title, className, widthChange,index }) {
           <Image
             src={image}
             alt={`Package ${index + 1}`}
-            height={100}
-            width={100}
-            className={`transition-transform duration-300 ${
-              hoveredIndex === index ? "scale-105" : "scale-100"
-            }`}
+            height={1080}
+            width={1080}
+            className="w-full h-full object-cover rounded-xl"
           />
         </CardContent>
       </Card>
@@ -43,7 +39,6 @@ export function ImageCard({ image, title, className, widthChange,index }) {
       <CardContent className="p-0 w-full h-full">
         <Image
           src={image}
-          className="w-full h-full object-cover rounded-xl"
           width={1080}
           height={1080}
         />

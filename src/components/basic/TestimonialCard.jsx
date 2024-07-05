@@ -23,7 +23,7 @@ const TestimonialCard = ({item}) => {
         </CardTitle>
       </CardHeader>
       <CardContent className="border-b border-gray-300">
-        <p>{item?.text}</p>
+        <p className="text-sm opacity-65">{item?.text}</p>
       </CardContent>
       <CardFooter className="pt-4">
         <CustomAvatar image={item?.image} name={"User"} />

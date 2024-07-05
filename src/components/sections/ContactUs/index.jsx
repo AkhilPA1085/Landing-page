@@ -22,7 +22,12 @@ const ContactUs = () => {
     <Section className={"md:bg-white bg-darkBgBlue"}>
       <div className="contact-form-wrapper rounded-xl md:p-8 md:bg-darkBgBlue text-white text-start">
         <div className="grid grid-cols-1 md:grid-cols-2 place-items-center gap-6">
-          <div className="grid-item">
+          <div className="grid-item" style={{
+              backgroundImage: "url(/images/packagesBanner/barzat-logo.png)",
+              backgroundSize: "contain",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+            }}>
             <div className="title md:text-6xl text-white font-semibold">
               We are just one Message Away!
             </div>
@@ -32,8 +37,8 @@ const ContactUs = () => {
             </div>
 
             <ul className="list-none pt-20">
-              {contacts.map((item, index) => (
-                <li className="flex items-start" key={index}>
+              {contacts?.map((item, index) => (
+                <li className="flex items-start pb-8" key={index}>
                   <div className="flex-none mr-4">
                     <Image
                       src={item.icon}
@@ -44,13 +49,13 @@ const ContactUs = () => {
                     />
                   </div>
                   <div className="flex flex-col items-start flex-grow">
-                    <div className="font-semibold text-xl">{item.title}</div>
+                    <div className="font-normal text-lg">{item.title}</div>
                   </div>
                 </li>
               ))}
             </ul>
           </div>
-          <div className="grid-item">
+          <div className="grid-item w-full">
             <ContactForm />
           </div>
         </div>

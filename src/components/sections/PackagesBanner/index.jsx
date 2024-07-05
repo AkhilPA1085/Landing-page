@@ -1,4 +1,5 @@
 "use client";
+import CustomButton from "@/components/basic/CustomButton";
 import { ImageCard } from "@/components/basic/ImageCard";
 import Section from "@/components/basic/Section";
 import { Button } from "@/components/ui/button";
@@ -8,19 +9,19 @@ import React, { useState } from "react";
 
 const images = [
   {
-    image: "/images/packagesBanner/image-1.png",
+    image: "/images/packagesBanner/image-1.jpg",
   },
   {
-    image: "/images/packagesBanner/image-2.png",
+    image: "/images/packagesBanner/image-2.jpg",
   },
   {
-    image: "/images/packagesBanner/image-3.png",
+    image: "/images/packagesBanner/image-3.jpg",
   },
   {
-    image: "/images/packagesBanner/image-4.png",
+    image: "/images/packagesBanner/image-4.jpg",
   },
   {
-    image: "/images/packagesBanner/image-5.png",
+    image: "/images/packagesBanner/image-5.jpg",
   },
 ];
 
@@ -28,7 +29,12 @@ const PackagesBanner = () => {
   return (
     <Section className="py-[50px] bg-darkBgBlue">
       <div className="grid grid-cols-1 md:grid-cols-2 place-items-center h-full gap-8">
-        <div className="grid-item">
+        <div className="grid-item" style={{
+              backgroundImage: "url(/images/packagesBanner/barzat-logo.png)",
+              backgroundSize: "contain",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+            }}>
           <Image
             src={"/images/packagesBanner/barzat-logo-yellow.png"}
             height={60}
@@ -37,12 +43,7 @@ const PackagesBanner = () => {
           />
           <div
             className="relative flex items-center justify-center h-full w-full"
-            style={{
-              backgroundImage: "url(/images/packagesBanner/barzat-logo.png)",
-              backgroundSize: "contain",
-              backgroundPosition: "right center",
-              backgroundRepeat: "no-repeat",
-            }}
+            
           >
             <div className="text-content pt-20 z-10">
               <div className="title md:text-6xl text-white font-semibold">
@@ -51,7 +52,7 @@ const PackagesBanner = () => {
               <div className="text-xl opacity-65 mt-2 mb-6 text-white">
                 Exclusivity Redefined: Our Best of the Best Collection
               </div>
-              <Button className="yellow-btn">See Packages</Button>
+              <CustomButton>See Packages</CustomButton>
             </div>
           </div>
         </div>
