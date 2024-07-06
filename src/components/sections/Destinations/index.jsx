@@ -44,8 +44,8 @@ const Destinations = () => {
           <ImageCard
             key={index}
             className={`${
-              index === 2 ? "md:col-span-2 w-full h-full" : "w-full h-full"
-            } ${index === 1 ? "aspect-square md:aspect-auto row-auto md:row-span-2 w-full h-full" : ""}`}
+              index === 2 ? "md:col-span-2 w-full h-full" : "col-span-1 w-full h-full"
+            } ${index === 1 ? "aspect-square md:aspect-auto md:row-span-2 w-full md:h-full h-auto" : ""}`}
             title={title}
             image={image}
           />

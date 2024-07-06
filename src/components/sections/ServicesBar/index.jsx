@@ -27,8 +27,8 @@ const services = [
 
 const ServicesBar = () => {
   return (
-    <Section className="py-8 bg-lightBgPink">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+    <Section className="py-0 bg-lightBgPink">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 py-8">
         {services.map((service, index) => (
           <div
             className="item flex flex-col items-start text-start p-4"

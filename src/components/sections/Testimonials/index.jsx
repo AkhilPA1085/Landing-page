@@ -1,19 +1,10 @@
-import CustomAvatar from "@/components/basic/CustomAvatar";
+"use client";
+import React from "react";
+
 import Section from "@/components/basic/Section";
 import SectionTitle from "@/components/basic/SectionTitle";
 import TestimonialCard from "@/components/basic/TestimonialCard";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-
-
-import Image from "next/image";
-
-import React from "react";
+import CustomSlider from "@/components/basic/CustomSlider";
 
 const testimonialDatas = [
   {
@@ -60,9 +51,28 @@ const testimonialDatas = [
   },
 ];
 
+const breakpoints = {
+  280: {
+    slidesPerView: 1,
+    spaceBetween: 10,
+  },
+  640: {
+    slidesPerView: 2,
+    spaceBetween: 20,
+  },
+  768: {
+    slidesPerView: 4,
+    spaceBetween: 10,
+  },
+  992: {
+    slidesPerView: 4,
+    spaceBetween: 10,
+  },
+};
+
 const Testimonials = () => {
   return (
-    <Section className={"bg-lightBgGray"}>
+    <Section className={"bg-lightBgGray pb-0"}>
       <SectionTitle
         title={"What people say, that you will also feel soon"}
         subTitle={
@@ -71,22 +81,14 @@ const Testimonials = () => {
         towColumn
       />
 
-      <Carousel
-        opts={{
-          align: "start",
-        }}
-        className="w-full"
-      >
-        <CarouselContent>
-          {testimonialDatas?.map((item, index) => (
-            <CarouselItem key={index} className="pl-1 md:basis-1/2 lg:basis-1/3">
-              <TestimonialCard item={item} key={index} />
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
-      </Carousel>
+      <CustomSlider
+        slidesData={testimonialDatas}
+        breakpoints={breakpoints}
+        autoplayDelay={2500}
+        renderSlide={(item, index) => (
+          <TestimonialCard item={item} key={index} />
+        )}
+      />
     </Section>
   );
 };

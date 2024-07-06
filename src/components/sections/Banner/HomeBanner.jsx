@@ -5,6 +5,7 @@ import SideBar from "../../basic/SideBar";
 import ContainerWrapper from "../../basic/ContainerWrapper";
 import { useScroll, useTransform, motion } from "framer-motion";
 import CustomButton from "@/components/basic/CustomButton";
+import Image from "next/image";
 
 const HomeBanner = () => {
   const ref = useRef(null);
@@ -12,17 +13,11 @@ const HomeBanner = () => {
     target: ref,
     offset: ["start start", "end start"],
   });
+  
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "200%"]);
-  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
-
-  const cloudMovement = {
-    x: ["0%", "50%", "100%"],
-    transition: {
-      duration: 30,
-      repeat: Infinity,
-      ease: "linear",
-    },
-  };
+  
+  // Add scale transform for zoom effect
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.5]);
 
   return (
     <div
@@ -32,10 +27,9 @@ const HomeBanner = () => {
       <ContainerWrapper>
         <div
           className="grid md:grid-cols-2 items-center h-full z-10 relative place-items-center justify-center"
-          style={{ y: textY }}
         >
           {/* Left Content */}
-          <div className="flex flex-col justify-between h-full md:py-16 p-8">
+          <div className="flex flex-col justify-between h-full md:py-16">
             <div className="text-white">
               <h1 className="text-3xl md:text-6xl font-semibold">
                 Discover New Destinations
@@ -67,21 +61,18 @@ const HomeBanner = () => {
       <div
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: "url(/images/banner/banner.png)",
+          backgroundImage: "url(/images/banner/full-banner.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       ></div>
-      <div
-        className="absolute -left-3 right-0 top-0 bottom-0 z-5"
-        style={{
-          backgroundImage: "url(/images/banner/big-cloud.png)",
-          backgroundSize: "cover",
-          backgroundPosition: "bottom",
-          y: backgroundY,
-        }}
-        animate={cloudMovement}
-      ></div>
+      <motion.div className="cloud-container absolute top-[50%] bottom-0" style={{
+        // y: backgroundY,
+        scale: scale,
+      }}>
+        <Image src={'/images/banner/big-cloud.png'} height={720} width={720} className=""/>
+      </motion.div>
+      
     </div>
   );
 };

@@ -60,3 +60,20 @@ body{
   -moz-column-gap: 20px;
   column-gap: 20px;
 }
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-wrapper{
+  padding-bottom: 100px;
+}
+
+.swiper-pagination{
+  bottom: 50px !important;
+}
+
+.swiper-pagination-bullet-active{
+  background: #000 !important;
+}

@@ -1,3 +1,4 @@
+import CustomSlider from "@/components/basic/CustomSlider";
 import HomeBanner from "@/components/sections/Banner/HomeBanner";
 import ContactUs from "@/components/sections/ContactUs";
 import Destinations from "@/components/sections/Destinations";
@@ -18,6 +19,7 @@ export default function Home() {
         <WhyChooseUs />
         <PackagesBanner />
         <Testimonaials />
+        <CustomSlider/>
         <ContactUs />
       </main>
     </>

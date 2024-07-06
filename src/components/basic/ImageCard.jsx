@@ -41,10 +41,11 @@ export function ImageCard({ image, title, className, widthChange,index }) {
           src={image}
           width={1080}
           height={1080}
+          className="w-full h-full object-cover rounded-xl"
         />
       </CardContent>
-      <CardHeader className="absolute inset-0">
-        <CardTitle className="text-white text-xl capitalize">{title}</CardTitle>
+      <CardHeader className="absolute inset-0 p-3">
+        <CardTitle className="text-white text-sm md:text-xl capitalize">{title}</CardTitle>
       </CardHeader>
       <CardFooter className="absolute bottom-0 w-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
         <CustomButton className="bg-white hover:bg-white">

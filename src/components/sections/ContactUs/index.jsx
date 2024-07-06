@@ -19,7 +19,7 @@ const contacts = [
 
 const ContactUs = () => {
   return (
-    <Section className={"md:bg-white bg-darkBgBlue"}>
+    <Section className={"md:bg-white bg-darkBgBlue pt-0"}>
       <div className="contact-form-wrapper rounded-xl md:p-8 md:bg-darkBgBlue text-white text-start">
         <div className="grid grid-cols-1 md:grid-cols-2 place-items-center gap-6">
           <div className="grid-item" style={{

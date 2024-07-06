@@ -3,7 +3,7 @@ import React from "react";
 const SectionTitle = ({ title, subTitle, towColumn }) => {
   if (towColumn) {
     return (
-      <div className="grid grid-cols-1 md:grid-cols-3 justify-between gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 justify-between md:gap-8 pb-8">
         <div className="col-span-2 section-title font-semibold md:text-5xl capitalize text-center md:text-start pb-4 md:leading-[74px]">
           {title}
         </div>
